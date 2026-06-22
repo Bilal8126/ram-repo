@@ -916,6 +916,41 @@ footer p { color: rgba(255,255,255,.4); font-size: .85rem; }
   .contact-split { grid-template-columns: 1fr; }
   .contact-right { padding: 32px 24px; }
 }
+/* ── Scroll-to-top button ── */
+#scroll-top {
+  position: fixed;
+  bottom: 32px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(245,197,24,.4);
+  z-index: 9000;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s ease, transform .3s ease, background .2s;
+  pointer-events: none;
+}
+#scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#scroll-top:hover {
+  background: var(--gold-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(245,197,24,.5);
+}
+
 /* ── Mobile overlay — body-level, never trapped by backdrop-filter ── */
 #mobile-nav {
   display: none;

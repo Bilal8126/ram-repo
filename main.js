@@ -6,10 +6,17 @@
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
-/* ── Navbar scroll ── */
-const navbar = document.getElementById('navbar');
+/* ── Navbar scroll + scroll-to-top button ── */
+const navbar    = document.getElementById('navbar');
+const scrollTop = document.getElementById('scroll-top');
+
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
+  scrollTop.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+
+scrollTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 /* ── Mobile nav overlay (body-level element, not inside navbar) ── */
@@ -30,10 +37,14 @@ function closeMobileNav() {
   document.body.style.overflow = '';
 }
 
-hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', (e) => {
+  e.preventDefault();
   mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav();
 });
-mobileClose.addEventListener('click', closeMobileNav);
+mobileClose.addEventListener('click', (e) => {
+  e.preventDefault();
+  closeMobileNav();
+});
 mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
 
 /* ── Particle generator ── */

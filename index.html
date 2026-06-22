@@ -32,7 +32,7 @@
         <li><a href="#clients">Clients</a></li>
         <li><a href="#contact" class="btn-nav">Contact</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -537,9 +537,14 @@
     </div>
   </footer>
 
+  <!-- ───── SCROLL TO TOP ───── -->
+  <button type="button" id="scroll-top" aria-label="Back to top" title="Back to top">
+    &#8679;
+  </button>
+
   <!-- ───── MOBILE NAV OVERLAY (body-level so position:fixed works correctly) ───── -->
   <div id="mobile-nav" aria-hidden="true">
-    <button id="mobile-close" aria-label="Close menu">&#10005;</button>
+    <button type="button" id="mobile-close" aria-label="Close menu">&#10005;</button>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#usp">Why Us</a></li>
