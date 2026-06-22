@@ -918,19 +918,33 @@ footer p { color: rgba(255,255,255,.4); font-size: .85rem; }
 }
 @media (max-width: 700px) {
   .nav-links { display: none; }
-  .hamburger { display: flex; }
+  .hamburger { display: flex; z-index: 10001; position: relative; }
   .nav-links.open {
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,.97);
+    background: #111111;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    z-index: 999;
+    gap: 28px;
+    z-index: 10000;
   }
-  .nav-links.open a { font-size: 1.4rem; }
+  .nav-links.open a {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,.85);
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 8px;
+    transition: color .2s, background .2s;
+  }
+  .nav-links.open a:hover { color: var(--gold); background: rgba(245,197,24,.08); }
+  .nav-links.open .btn-nav {
+    background: var(--gold) !important;
+    color: var(--dark) !important;
+    border-radius: 50px !important;
+    padding: 12px 32px !important;
+  }
   .form-row { grid-template-columns: 1fr; }
   .section { padding: 72px 0; }
   .hero-cta { flex-direction: column; }
