@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- dark circle background -->
+  <circle cx="32" cy="32" r="32" fill="#1a1a1a"/>
+  <!-- gold octagon -->
+  <polygon points="16,4 48,4 60,16 60,48 48,60 16,60 4,48 4,16" fill="#F5C518"/>
+  <!-- cup body -->
+  <path d="M20 28 Q20 44 32 44 Q44 44 44 28 Z" fill="#1a1a1a"/>
+  <!-- cup handle -->
+  <path d="M44 32 Q50 32 50 37 Q50 42 44 42" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+  <!-- saucer -->
+  <ellipse cx="32" cy="45" rx="13" ry="3" fill="#1a1a1a"/>
+  <!-- steam swirl 1 -->
+  <path d="M27 24 Q25 20 27 17 Q29 14 27 11" fill="none" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- steam swirl 2 -->
+  <path d="M32 23 Q30 19 32 16 Q34 13 32 10" fill="none" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- steam swirl 3 -->
+  <path d="M37 24 Q35 20 37 17 Q39 14 37 11" fill="none" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- coffee swirl inside cup -->
+  <path d="M26 34 Q29 31 32 34 Q35 37 38 34" fill="none" stroke="#F5C518" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
