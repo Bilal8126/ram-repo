@@ -916,35 +916,66 @@ footer p { color: rgba(255,255,255,.4); font-size: .85rem; }
   .contact-split { grid-template-columns: 1fr; }
   .contact-right { padding: 32px 24px; }
 }
+/* ── Mobile overlay — body-level, never trapped by backdrop-filter ── */
+#mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #111111;
+  z-index: 99999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+#mobile-nav.open {
+  display: flex;
+}
+#mobile-close {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font-size: 1.8rem;
+  color: rgba(255,255,255,.7);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: color .2s;
+}
+#mobile-close:hover { color: var(--gold); }
+#mobile-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+#mobile-nav ul li a {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.85);
+  padding: 12px 36px;
+  border-radius: 10px;
+  transition: color .2s, background .2s;
+  text-align: center;
+}
+#mobile-nav ul li a:hover { color: var(--gold); background: rgba(245,197,24,.08); }
+#mobile-nav .mob-btn-nav {
+  margin-top: 12px;
+  background: var(--gold) !important;
+  color: var(--dark) !important;
+  border-radius: 50px !important;
+  padding: 14px 40px !important;
+  font-weight: 800 !important;
+}
+
 @media (max-width: 700px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; z-index: 10001; position: relative; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: #111111;
-    justify-content: center;
-    align-items: center;
-    gap: 28px;
-    z-index: 10000;
-  }
-  .nav-links.open a {
-    font-size: 1.5rem;
-    color: rgba(255,255,255,.85);
-    font-weight: 700;
-    padding: 10px 24px;
-    border-radius: 8px;
-    transition: color .2s, background .2s;
-  }
-  .nav-links.open a:hover { color: var(--gold); background: rgba(245,197,24,.08); }
-  .nav-links.open .btn-nav {
-    background: var(--gold) !important;
-    color: var(--dark) !important;
-    border-radius: 50px !important;
-    padding: 12px 32px !important;
-  }
+  .nav-links { display: none !important; }
+  .hamburger { display: flex; position: relative; z-index: 100000; }
   .form-row { grid-template-columns: 1fr; }
   .section { padding: 72px 0; }
   .hero-cta { flex-direction: column; }

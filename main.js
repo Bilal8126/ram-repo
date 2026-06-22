@@ -12,17 +12,29 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 });
 
-/* ── Hamburger ── */
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.querySelector('.nav-links');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+/* ── Mobile nav overlay (body-level element, not inside navbar) ── */
+const hamburger  = document.getElementById('hamburger');
+const mobileNav  = document.getElementById('mobile-nav');
+const mobileClose= document.getElementById('mobile-close');
+
+function openMobileNav() {
+  mobileNav.classList.add('open');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileNav() {
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
   hamburger.classList.remove('open');
-  navLinks.classList.remove('open');
-}));
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.contains('open') ? closeMobileNav() : openMobileNav();
+});
+mobileClose.addEventListener('click', closeMobileNav);
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
 
 /* ── Particle generator ── */
 (function createParticles() {
